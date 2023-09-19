@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/14 15:49:00 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 15:57:29 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include "libft.h"
-
-int	ft_tolower(int c)
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	char			*dest_ptr;
+	const char		*src_ptr;
+	unsigned int	i;
+
+	if (dest == 0 && src == 0)
+		return (0);
+	dest_ptr = (char *)dest;
+	src_ptr = (const char *)src;
+	i = 0;
+	while (i < n)
+	{
+		dest_ptr[i] = src_ptr[i];
+		i++;
+	}
+	return (dest);
 }

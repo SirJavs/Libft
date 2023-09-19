@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/14 15:34:51 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 15:34:59 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include "libft.h"
-
-int	ft_tolower(int c)
+void	*ft_memset(void *ptr, int value, unsigned int num)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	char	*p;
+	char	val;
+
+	p = (char *)ptr;
+	val = (char)value;
+	while (num > 0)
+	{
+		*p = val;
+		p++;
+		num--;
+	}
+	return (ptr);
 }

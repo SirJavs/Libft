@@ -6,22 +6,16 @@
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:55:36 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/13 16:01:58 by jamedina         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:39:43 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
+#include "libft.h"
 
-char	*ft_toupper(char *str)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-	return (str);
+	if (c >= 97 && c <= 122)
+		c = c - 32;
+	return (c);
 }

@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 14:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/19 17:14:12 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/18 18:23:34 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/18 18:38:18 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	unsigned int	count;
+	char	*source;
+	size_t	i;
 
-	count = 0;
-	if (size > 0)
+	if (!s)
+		return (NULL);
+	if (start > (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > (ft_strlen(s) - start))
+		len = (ft_strlen(s) - start);
+	source = (char *)malloc(sizeof(char) * (len + 1));
+	if (!source)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		while (count < (size - 1) && src[count] != '\0')
-		{
-			dest[count] = src[count];
-			count++;
-		}
-		dest[count] = '\0';
+		source[i] = *(s + start + i);
+		i++;
 	}
-	return (ft_strlen(src));
+	source[i] = '\0';
+	return (source);
 }

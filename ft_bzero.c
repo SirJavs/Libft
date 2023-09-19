@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/14 15:43:49 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 15:44:01 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include "libft.h"
-
-int	ft_tolower(int c)
+void	ft_bzero(void *s, unsigned int n)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	char	*p;
+
+	p = (char *)s;
+	while (n > 0)
+	{
+		*p = 0;
+		p++;
+		n--;
+	}
 }

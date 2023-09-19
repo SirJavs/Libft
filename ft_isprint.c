@@ -6,22 +6,13 @@
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:53:23 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/13 15:57:41 by jamedina         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:47:46 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] < 32 || str[i] > 126)
-			return (0);
-		i++;
-	}
-	return (1);
+	return (c >= 32 && c <= 126); 
 }

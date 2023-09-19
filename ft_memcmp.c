@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/14 21:18:48 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 21:21:16 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include "libft.h"
-
-int	ft_tolower(int c)
+int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
+	unsigned int		i;
+
+	ptr1 = s1;
+	ptr2 = s2;
+	i = 0;
+	while (i < n)
+	{
+		if (ptr1[i] != ptr2[i])
+		{
+			return (ptr1[i] - ptr2[i]);
+		}
+		i++;
+	}
+	return (0);
 }

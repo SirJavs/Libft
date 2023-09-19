@@ -6,24 +6,14 @@
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:52:20 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/13 15:57:01 by jamedina         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:41:50 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
+#include "libft.h"
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

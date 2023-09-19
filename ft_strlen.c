@@ -6,13 +6,13 @@
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:59:34 by jamedina          #+#    #+#             */
-/*   Updated: 2023/07/08 16:11:10 by jamedina         ###   ########.fr       */
+/*   Updated: 2023/09/14 16:07:43 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 

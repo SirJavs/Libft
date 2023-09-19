@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/14 15:27:37 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 15:28:48 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_isascii(int c)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	return (c >= 0 && c <= 127);
 }

@@ -6,46 +6,33 @@
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:37:31 by jamedina          #+#    #+#             */
-/*   Updated: 2023/07/11 16:35:22 by jamedina         ###   ########.fr       */
+/*   Updated: 2023/09/13 23:05:23 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
 
-int	espacios(char *str, int *punt_i)
+int	ft_atoi(const char *str)
 {
-	int	count;
-	int	i;
+	int	result;
+	int	sign;
 
-	i = 0;
-	count = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	while ((str[i] == 43 || str[i] == 45))
+	result = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (str[i] == 45)
-			count *= -1;
-		i++;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	*punt_i = i;
-	return (count);
-}
-
-int	ft_atoi(char *str)
-{
-	int	signo;
-	int	resultado;
-	int	i;
-
-	resultado = 0;
-	signo = espacios(str, &i);
-	while (str[i] && str[i] >= 48 && str[i] <= 57)
+	while (*str >= '0' && *str <= '9')
 	{
-		resultado *= 10;
-		resultado += str[i] - 48;
-		i++;
+		result = result * 10 + (*str - '0');
+		str++;
 	}
-	resultado *= signo;
-	return (resultado);
+	return (result * sign);
 }

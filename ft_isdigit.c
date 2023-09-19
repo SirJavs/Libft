@@ -6,24 +6,13 @@
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:33:53 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/13 15:57:25 by jamedina         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:42:19 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] < '0' || str[i] > '9')
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	return (c >= '0' && c <= '9');
 }

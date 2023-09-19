@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/13 23:09:00 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 15:25:15 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_isalnum(int c)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	return ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A'
+			&& c <= 'Z'));
 }

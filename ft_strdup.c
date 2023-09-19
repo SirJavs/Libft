@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/18 17:57:31 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/18 18:17:15 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	char	*ss1;
+	char	*i;
+	size_t	j;
+
+	ss1 = (char *)s1;
+	i = (char *)malloc((ft_strlen(ss1) + 1));
+	if (i == NULL)
+		return (NULL);
+	j = 0;
+	while (ss1[j] != '\0')
+	{
+		i[j] = ss1[j];
+		j++;
+	}
+	i[j] = '\0';
+	return (i);
 }

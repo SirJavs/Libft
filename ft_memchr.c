@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamedina <jamedina@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 16:00:29 by jamedina          #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:48 by jamedina         ###   ########.fr       */
+/*   Created: 2023/09/14 21:06:05 by jamedina          #+#    #+#             */
+/*   Updated: 2023/09/14 21:11:34 by jamedina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include "libft.h"
-
-int	ft_tolower(int c)
+void	*ft_memchr(const void *s, int c, unsigned int n)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	const unsigned char	*ptr;
+	unsigned char		uc;
+	unsigned int		i;
+
+	ptr = s;
+	uc = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		if (ptr[i] == uc)
+		{
+			return ((void *)(ptr + i));
+		}
+		i++;
+	}
+	return ((void *)0);
 }
